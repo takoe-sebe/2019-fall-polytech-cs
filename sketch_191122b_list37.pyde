@@ -4,7 +4,9 @@ def setup():
     background(255)
     noStroke()
     colorMode(HSB)
+flug = True
 def draw():
+    global flug
     if(flug):
         for i in range(0,10):
             for j in range(0,5):
@@ -12,4 +14,5 @@ def draw():
                 rect(j*40+50 , i*40+50 , 35, 35)
                 rect ((10 -j)*40+10 , i*40+50 , 35, 35)
 def mouseClicked():
-    flug=!flug
+    global flug
+    flug=not flug
