@@ -2,18 +2,19 @@ add_library('sound')
 
 amount = 20
 num=1.0
-scale = 1.5
+scale = 1.9
 bands = 64
 sum = [0.0] * bands
 smooth_factor = 0.2
  
 def setup():
+    fullScreen()
     size(800, 600)
     smooth()
     global img, imgtr, imgob, vniz, vverh
     img = loadImage("nbo.jpg")
     imgtr = loadImage("sun.png")
-    imgob=loadImage("rosa.png")
+    imgob=loadImage("ros.png")
     vniz = loadImage("niz.png")
     vverh = loadImage("verh.png")
     imageMode(CENTER)
@@ -59,17 +60,17 @@ fon=zadnii_fon()
 
 class oblako():
     def render(self):
-        image(imgob, frameCount, height/2)
+        image(imgob, frameCount*2-700, height/2)
 cloud=oblako()
 
 class vniz():
     def render(self):
-        image(vniz,-frameCount*1.7+700,-125)
+        image(vniz,-frameCount*2.7+1300,-200)
 niz=vniz()
 
 class vverh():
     def render(self):
-        image(vverh,-frameCount*1.7+700,-215)
+        image(vverh,-frameCount*2.7+1300,-290)
 verh=vverh()
 
 def draw():
