@@ -6,7 +6,6 @@ scale = 1.5
 bands = 64
 sum = [0.0] * bands
 smooth_factor = 0.2
-i=0
  
 def setup():
     size(800, 600)
@@ -63,7 +62,6 @@ class oblako():
         image(imgob, frameCount, height/2)
 cloud=oblako()
 
-
 class vniz():
     def render(self):
         image(vniz,-frameCount*1.7+700,-125)
@@ -75,17 +73,15 @@ class vverh():
 verh=vverh()
 
 def draw():
-    global i
-    i=i+1
     background(0)
     fon.render()
     fft.analyze()
-    if i > 200:
-        if i%5==0:
+    if frameCount > 200:
+        if frameCount%5==0:
             niz.render()
         else:
             verh.render()
     cloud.render()
-    println(i)
+    println(frameCount)
 
     
